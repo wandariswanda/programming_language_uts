@@ -209,16 +209,16 @@ elseif($function == "create_pembayaran"){ // Pembayaran
         $tahun =  date("y", strtotime($date));
         $bulan =  date("m", strtotime($date));
         $tanggal =  date("d", strtotime($date));
+        $id_petugas = $_SESSION['id_petugas'];
 
-        
         $dbPembayaran->POSTData(
-            $_POST['id_petugas'],
+            $id_petugas,
             $_POST['nisn'],
             $tanggal,
             $bulan,
             $tahun,
             $_POST['id_spp'],
-            $_POST['jumlah']
+            $_POST['jumlah_bayar']
         );
     }
     header("location:../views/view_pembayaran.php");

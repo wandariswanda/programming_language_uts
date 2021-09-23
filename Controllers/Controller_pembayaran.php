@@ -1,5 +1,5 @@
 <?php
-class Controller_spp{
+class Controller_pembayaran{
   var $db;
   var $con;
   var $query;
@@ -8,12 +8,11 @@ class Controller_spp{
 
   function __construct()
   {
-    include '../Models/Model_spp.php';
-    $this->MSpp = new Model_spp();
+    include '../Models/Model_pembayaran.php';
+    $this->MPembayaran = new Model_pembayaran();
   }
-  
-  // function POSTData ($id_petugas, $nisn, $tgl_bayar, $bulan_bayar, $bulan_bayar, $tahun_bayar, $id_spp, $jumlah_bayar){
-    function POSTData ($id_petugas, $nisn){
-    $this->MSpp->POST($tahun, $nominal);
+
+  function POSTData ($id_petugas, $nisn, $tanggal_bayar, $bulan_bayar, $tahun_bayar, $id_spp, $jumlah_bayar){
+    $this->MPembayaran->POST($id_petugas, $nisn, $tanggal_bayar, $bulan_bayar, $tahun_bayar, $id_spp, $jumlah_bayar);
   }
 }

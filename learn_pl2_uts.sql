@@ -11,7 +11,7 @@
  Target Server Version : 100411
  File Encoding         : 65001
 
- Date: 23/09/2021 10:23:12
+ Date: 23/09/2021 10:55:30
 */
 
 SET NAMES utf8mb4;
@@ -74,7 +74,7 @@ INSERT INTO `pbo_pegawai` VALUES (1419707070, 'Yadi Ramadhan Tenggara', 'L', '20
 -- ----------------------------
 DROP TABLE IF EXISTS `pembayaran`;
 CREATE TABLE `pembayaran`  (
-  `id_pembayaran` int NOT NULL,
+  `id_pembayaran` int NOT NULL AUTO_INCREMENT,
   `id_petugas` int NULL DEFAULT NULL,
   `nisn` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `tgl_bayar` int NULL DEFAULT NULL,
@@ -83,11 +83,12 @@ CREATE TABLE `pembayaran`  (
   `id_spp` int NULL DEFAULT NULL,
   `jumlah_bayar` int NULL DEFAULT NULL,
   PRIMARY KEY (`id_pembayaran`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pembayaran
 -- ----------------------------
+INSERT INTO `pembayaran` VALUES (3, 3, '14197093', 24, '09', 21, 2, 10000);
 
 -- ----------------------------
 -- Table structure for petugas
